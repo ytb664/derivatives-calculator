@@ -34,7 +34,7 @@ closePrice.onkeyup = function() {
 }
 
 function showMargin() {
-    margin.textContent = initialMargin;
+    margin.textContent = initialMargin.toFixed(4);
 }
 
 function showPnl() {
@@ -47,5 +47,5 @@ function showPnl() {
         profitAndLoss = closeMargin - baseMargin;
     }
 
-    pnl.textContent = profitAndLoss;
+    pnl.textContent = profitAndLoss.toFixed(4);
 }
