@@ -4,6 +4,7 @@ const margin = document.getElementById("result-margin");
 
 const closePrice = document.getElementById("input-close");
 const pnl = document.getElementById("result-pnl");
+const pnlPercentage = document.getElementById("result-pnl-percentage");
 
 let inputtedQty = 0;
 let inputtedEntry = 0;
@@ -31,6 +32,7 @@ closePrice.onkeyup = function() {
     inputtedClose = closePrice.value;
 
     showPnl();
+    showPnlPercentage();
 }
 
 function showMargin() {
@@ -41,11 +43,16 @@ function showPnl() {
     baseMargin = inputtedQty * inputtedEntry;
     closeMargin = inputtedQty * inputtedClose;
     
-    if(inputtedClose == 0) {
+    if (inputtedClose == 0) {
         profitAndLoss = 0;
     } else {
         profitAndLoss = closeMargin - baseMargin;
     }
 
     pnl.textContent = profitAndLoss.toFixed(4);
+}
+
+function showPnlPercentage() {
+    let tempResult = (profitAndLoss / initialMargin) * 100;
+    pnlPercentage.textContent = tempResult.toFixed(2);
 }
