@@ -5,6 +5,7 @@ const margin = document.getElementById("result-margin");
 const closePrice = document.getElementById("input-close");
 const pnl = document.getElementById("result-pnl");
 const pnlPercentage = document.getElementById("result-pnl-percentage");
+const roi = document.getElementById("result-roi");
 
 let inputtedQty = 0;
 let inputtedEntry = 0;
@@ -55,4 +56,5 @@ function showPnl() {
 function showPnlPercentage() {
     let tempResult = (profitAndLoss / initialMargin) * 100;
     pnlPercentage.textContent = tempResult.toFixed(2);
+    roi.textContent = pnlPercentage.textContent;
 }
