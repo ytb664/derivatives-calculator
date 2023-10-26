@@ -1,3 +1,5 @@
+const leverage = document.getElementById("input-leverage");
+
 const qty = document.getElementById("input-qty");
 const entry = document.getElementById("input-entry");
 const margin = document.getElementById("result-margin");
@@ -17,21 +19,38 @@ let profitAndLoss = 0;
 let baseMargin = 0;
 let closeMargin = 0;
 
+leverage.onkeyup = function() {
+    if (leverage.value <= 0) {
+        initialMargin = baseMargin;
+    } else {
+        initialMargin /= leverage.value;
+    }
+
+    showResult();
+}
+
 qty.onkeyup = function() {
     inputtedQty = qty.value;
     initialMargin = inputtedQty * inputtedEntry;
-    showMargin();
+
+    showResult();
 }
 
 entry.onkeyup = function() {
     inputtedEntry = entry.value;
     initialMargin = inputtedQty * inputtedEntry;
-    showMargin();
+
+    showResult();
 }
 
 closePrice.onkeyup = function() {
     inputtedClose = closePrice.value;
 
+    showResult();
+}
+
+function showResult() {
+    showMargin();
     showPnl();
     showPnlPercentage();
 }
@@ -54,7 +73,9 @@ function showPnl() {
 }
 
 function showPnlPercentage() {
-    let tempResult = (profitAndLoss / initialMargin) * 100;
-    pnlPercentage.textContent = tempResult.toFixed(2);
-    roi.textContent = pnlPercentage.textContent;
+    let tempPnl = (profitAndLoss / baseMargin) * 100;
+    let tempRoi = (profitAndLoss / initialMargin) * 100;
+
+    pnlPercentage.textContent = tempPnl.toFixed(2);
+    roi.textContent = tempRoi.toFixed(2);
 }
