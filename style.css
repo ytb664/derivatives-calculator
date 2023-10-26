@@ -53,12 +53,12 @@ html {
                 cursor: pointer;
             }
 
-            > .long:hover {
+            > .long {
                 color: white;
                 background-color: green;
             }
 
-            > .short:hover {
+            > .short {
                 color: white;
                 background-color: red;
             }

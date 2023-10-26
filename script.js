@@ -1,3 +1,6 @@
+const long = document.getElementById("long");
+const short = document.getElementById("short");
+
 const leverage = document.getElementById("input-leverage");
 
 const qty = document.getElementById("input-qty");
@@ -18,6 +21,22 @@ let profitAndLoss = 0;
 
 let baseMargin = 0;
 let closeMargin = 0;
+
+long.classList.add('long');
+
+long.addEventListener('click', () => {
+    if (!long.classList.contains('long') && short.classList.contains('short')) {
+        long.classList.toggle('long');
+        short.classList.toggle('short');
+    }
+});
+
+short.addEventListener('click', () => {
+    if (!short.classList.contains('short') && long.classList.contains('long')) {
+        short.classList.toggle('short');
+        long.classList.toggle('long');
+    }
+})
 
 leverage.onkeyup = function() {
     if (leverage.value <= 0) {
