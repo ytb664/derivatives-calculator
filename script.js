@@ -29,6 +29,8 @@ long.addEventListener('click', () => {
         long.classList.toggle('long');
         short.classList.toggle('short');
     }
+
+    showResult();
 });
 
 short.addEventListener('click', () => {
@@ -36,6 +38,8 @@ short.addEventListener('click', () => {
         short.classList.toggle('short');
         long.classList.toggle('long');
     }
+
+    showResult();
 })
 
 leverage.onkeyup = function() {
@@ -84,6 +88,8 @@ function showPnl() {
     
     if (inputtedClose == 0) {
         profitAndLoss = 0;
+    } else if (short.classList.contains('short')) {
+        profitAndLoss = baseMargin - closeMargin;
     } else {
         profitAndLoss = closeMargin - baseMargin;
     }

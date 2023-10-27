@@ -69,6 +69,10 @@ html {
             width: 100%;
             padding: 0.5rem;
         }
+
+        & input:focus {
+            outline-color: green;
+        }
     }
 
     > .right-side {
