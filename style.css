@@ -73,6 +73,10 @@ html {
         & input:focus {
             outline-color: green;
         }
+
+        & .short-input:focus {
+            outline-color: red;
+        }
     }
 
     > .right-side {

@@ -1,6 +1,8 @@
 const long = document.getElementById("long");
 const short = document.getElementById("short");
 
+const input = document.querySelectorAll('input');
+let inputArray = [...input];
 const leverage = document.getElementById("input-leverage");
 
 const qty = document.getElementById("input-qty");
@@ -28,6 +30,10 @@ long.addEventListener('click', () => {
     if (!long.classList.contains('long') && short.classList.contains('short')) {
         long.classList.toggle('long');
         short.classList.toggle('short');
+
+        inputArray.forEach(e => {
+            e.classList.toggle('short-input');
+        });
     }
 
     showResult();
@@ -37,6 +43,10 @@ short.addEventListener('click', () => {
     if (!short.classList.contains('short') && long.classList.contains('long')) {
         short.classList.toggle('short');
         long.classList.toggle('long');
+
+        inputArray.forEach(e => {
+            e.classList.toggle('short-input');
+        });
     }
 
     showResult();
