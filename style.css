@@ -90,6 +90,10 @@ html {
         > .result.row {
             display: flex;
             justify-content: space-between;
+
+            >.result-group {
+                display: flex;
+            }
         }
     }
 }
