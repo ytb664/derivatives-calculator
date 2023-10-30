@@ -89,7 +89,7 @@ function showResult() {
 }
 
 function showMargin() {
-    margin.textContent = initialMargin.toFixed(4);
+    margin.textContent = initialMargin.toFixed(2);
 }
 
 function showPnl() {
@@ -104,7 +104,7 @@ function showPnl() {
         profitAndLoss = closeMargin - baseMargin;
     }
 
-    pnl.textContent = profitAndLoss.toFixed(4);
+    pnl.textContent = profitAndLoss.toFixed(2);
 }
 
 function showPnlPercentage() {
