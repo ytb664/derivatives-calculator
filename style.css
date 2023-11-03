@@ -77,17 +77,6 @@ html {
         & .short-input:focus {
             outline-color: red;
         }
-
-        & .fee-block {
-            display: flex;
-            flex-direction: column;
-
-            > .fee-container {
-                display: flex;
-                text-align: center;
-                gap: 0.5rem;
-            }
-        }
     }
 
     > .right-side {
