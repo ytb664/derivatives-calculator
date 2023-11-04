@@ -41,7 +41,7 @@ html {
     flex-wrap: wrap-reverse;
 
     > .left-side {
-        width: 30%;
+        width: max(30rem, 30vw);
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -91,12 +91,16 @@ html {
     }
 
     > .right-side {
-        width: 30%;
+        width: max(30vw, 30rem);
         padding: 1rem;
         background-color: #E5E4E2;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
+
+        :first-child {
+            align-self: center;
+        }
 
         > .result.row {
             display: flex;
