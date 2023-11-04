@@ -27,7 +27,7 @@ html {
         gap: 2rem;
 
         > #page-title {
-            font-size: 4vw;
+            font-size: max(4vw, 2.5rem);
         }
     }
 }
@@ -38,6 +38,7 @@ html {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap-reverse;
 
     > .left-side {
         width: 30%;
