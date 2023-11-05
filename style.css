@@ -2,6 +2,8 @@
 
 :root {
     font-size: 62.5%;
+    --long-main-color: green;
+    --short-main-color: red;
 }
 
 * {
@@ -61,12 +63,12 @@ html {
 
             > .long {
                 color: white;
-                background-color: green;
+                background-color: var(--long-main-color);
             }
 
             > .short {
                 color: white;
-                background-color: red;
+                background-color: var(--short-main-color);
             }
         }
 
@@ -82,11 +84,11 @@ html {
         }
 
         & input:focus {
-            outline-color: green;
+            outline-color: var(--long-main-color);
         }
 
         & .short-input:focus {
-            outline-color: red;
+            outline-color: var(--short-main-color);
         }
     }
 
