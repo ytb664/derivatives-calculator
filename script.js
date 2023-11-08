@@ -14,6 +14,9 @@ const pnl = document.getElementById("result-pnl");
 const pnlPercentage = document.getElementById("result-pnl-percentage");
 const roi = document.getElementById("result-roi");
 
+const entryFeeInput = document.getElementById("input-entry-fee");
+const closeFeeInput = document.getElementById("input-close-fee");
+
 let inputtedQty = 0;
 let inputtedEntry = 0;
 let inputtedClose = 0;
@@ -23,6 +26,9 @@ let profitAndLoss = 0;
 
 let baseMargin = 0;
 let closeMargin = 0;
+
+let entryFee = 0;
+let closeFee = 0;
 
 long.classList.add('long');
 
@@ -80,6 +86,24 @@ closePrice.onkeyup = function() {
     inputtedClose = closePrice.value;
 
     showResult();
+}
+
+entryFeeInput.onkeyup = function() {
+    entryFee = entryFeeInput.value;
+
+    entryFee *= baseMargin;
+    profitAndLoss -= entryFee;
+
+    pnl.textContent = profitAndLoss.toFixed(2);
+}
+
+closeFeeInput.onkeyup = function() {
+    closeFee = closeFeeInput.value;
+
+    closeFee *= closeMargin;
+    profitAndLoss -= closeFee;
+
+    pnl.textContent = profitAndLoss.toFixed(2);
 }
 
 function showResult() {
