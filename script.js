@@ -128,6 +128,17 @@ function showPnl() {
         profitAndLoss = closeMargin - baseMargin;
     }
 
+    if (profitAndLoss > 0) {
+        pnl.classList.add('profit');
+        pnl.classList.remove('loss');
+    } else if (profitAndLoss < 0) {
+        pnl.classList.add('loss');
+        pnl.classList.remove('profit');
+    } else {
+        pnl.classList.remove('profit');
+        pnl.classList.remove('loss');
+    }
+
     pnl.textContent = profitAndLoss.toFixed(2);
 }
 

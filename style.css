@@ -148,6 +148,14 @@ html {
             >.result-group {
                 display: flex;
                 gap: 0.5rem;
+
+                & .profit {
+                    color: var(--long-main-color);
+                }
+
+                & .loss {
+                    color: var(--short-main-color);
+                }
             }
         }
     }
