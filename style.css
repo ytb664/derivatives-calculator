@@ -145,18 +145,22 @@ html {
             display: flex;
             justify-content: space-between;
 
-            >.result-group {
+            > .result-group {
                 display: flex;
                 gap: 0.5rem;
-
-                & .profit {
-                    color: var(--long-main-color);
-                }
-
-                & .loss {
-                    color: var(--short-main-color);
-                }
             }
+        }
+
+        & #result-margin {
+            color: var(--color-base-text);
+        }
+
+        & .profit {
+            color: var(--long-main-color);
+        }
+
+        & .loss {
+            color: var(--short-main-color);
         }
     }
 }

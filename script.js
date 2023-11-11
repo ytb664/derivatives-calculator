@@ -10,6 +10,7 @@ const entry = document.getElementById("input-entry");
 const margin = document.getElementById("result-margin");
 
 const closePrice = document.getElementById("input-close");
+const resultNumber = document.querySelectorAll(".result .number")
 const pnl = document.getElementById("result-pnl");
 const pnlPercentage = document.getElementById("result-pnl-percentage");
 const roi = document.getElementById("result-roi");
@@ -129,14 +130,20 @@ function showPnl() {
     }
 
     if (profitAndLoss > 0) {
-        pnl.classList.add('profit');
-        pnl.classList.remove('loss');
+        resultNumber.forEach((el) => {
+            el.classList.add("profit");
+            el.classList.remove("loss");
+        });
     } else if (profitAndLoss < 0) {
-        pnl.classList.add('loss');
-        pnl.classList.remove('profit');
+        resultNumber.forEach((el) => {
+            el.classList.remove("profit");
+            el.classList.add("loss");
+        });
     } else {
-        pnl.classList.remove('profit');
-        pnl.classList.remove('loss');
+        resultNumber.forEach((el) => {
+            el.classList.remove("profit");
+            el.classList.remove("loss");
+        });
     }
 
     pnl.textContent = profitAndLoss.toFixed(2);
