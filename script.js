@@ -93,18 +93,18 @@ entryFeeInput.onkeyup = function() {
     entryFee = entryFeeInput.value;
 
     entryFee *= baseMargin;
-    profitAndLoss -= entryFee;
+    let tempProfitNLoss = profitAndLoss - entryFee;
 
-    pnl.textContent = profitAndLoss.toFixed(2);
+    pnl.textContent = tempProfitNLoss.toFixed(2);
 }
 
 closeFeeInput.onkeyup = function() {
     closeFee = closeFeeInput.value;
 
     closeFee *= closeMargin;
-    profitAndLoss -= closeFee;
+    let tempProfitNLoss = profitAndLoss - closeFee;
 
-    pnl.textContent = profitAndLoss.toFixed(2);
+    pnl.textContent = tempProfitNLoss.toFixed(2);
 }
 
 function showResult() {
