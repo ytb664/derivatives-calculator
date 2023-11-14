@@ -60,12 +60,6 @@ short.addEventListener('click', () => {
 })
 
 leverage.onkeyup = function() {
-    if (leverage.value <= 0) {
-        initialMargin = baseMargin;
-    } else {
-        initialMargin /= leverage.value;
-    }
-
     showResult();
 }
 
@@ -114,7 +108,11 @@ function showResult() {
 }
 
 function showMargin() {
-    margin.textContent = initialMargin.toFixed(2);
+    if (leverage.value > 0) {
+        margin.textContent = (initialMargin / leverage.value).toFixed(2);
+    } else {
+        margin.textContent = initialMargin.toFixed(2);
+    }
 }
 
 function showPnl() {
