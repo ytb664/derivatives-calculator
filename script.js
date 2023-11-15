@@ -84,27 +84,32 @@ closePrice.onkeyup = function() {
 }
 
 entryFeeInput.onkeyup = function() {
+    calcFee();
+}
+
+closeFeeInput.onkeyup = function() {
+    calcFee();
+}
+
+function showResult() {
+    calcFee();
+    showMargin();
+    showPnl();
+    showPnlPercentage();
+}
+
+function calcFee() {
     entryFee = entryFeeInput.value;
 
     entryFee *= baseMargin;
     let tempProfitNLoss = profitAndLoss - entryFee;
 
-    pnl.textContent = tempProfitNLoss.toFixed(2);
-}
-
-closeFeeInput.onkeyup = function() {
     closeFee = closeFeeInput.value;
 
     closeFee *= closeMargin;
-    let tempProfitNLoss = profitAndLoss - closeFee;
+    tempProfitNLoss -= closeFee;
 
     pnl.textContent = tempProfitNLoss.toFixed(2);
-}
-
-function showResult() {
-    showMargin();
-    showPnl();
-    showPnlPercentage();
 }
 
 function showMargin() {
