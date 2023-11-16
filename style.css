@@ -31,6 +31,14 @@
 	margin: 0;
 }
 
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
 html {
     font-family: 'Roboto', sans-serif;
     height: 100vh;
