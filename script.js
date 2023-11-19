@@ -156,11 +156,15 @@ function showPnlPercentage() {
     let tempPnl = (profitAndLoss / baseMargin) * 100;
     let tempRoi = (profitAndLoss / initialMargin) * 100;
 
-    if (tempPnl !== isNaN) {
+    if (!isNaN(tempPnl)) {
         pnlPercentage.textContent = tempPnl.toFixed(2);
+    } else {
+        pnlPercentage.textContent = "0.00";
     }
 
-    if (tempRoi !== isNaN) {
+    if (!isNaN(tempRoi)) {
         roi.textContent = tempRoi.toFixed(2);
+    } else {
+        roi.textContent = "0.00";
     }
 }
