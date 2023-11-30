@@ -168,3 +168,12 @@ function showPnlPercentage() {
         roi.textContent = "0.00";
     }
 }
+
+function Calculate(leverage, quantity, entry, close, entryFee, closeFee) {
+    this.leverage = leverage;
+    this.quantity = quantity;
+    this.entry = entry;
+    this.close = close;
+    this.entryFee = entryFee;
+    this.closeFee = closeFee;
+}
