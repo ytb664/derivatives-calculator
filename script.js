@@ -177,3 +177,27 @@ function Calculate(leverage, quantity, entry, close, entryFee, closeFee) {
     this.entryFee = entryFee;
     this.closeFee = closeFee;
 }
+
+Calculate.prototype.setInitialMargin = function() {
+    this.initialMargin = this.quantity * this.entry;
+};
+
+Calculate.prototype.setLeveragedInitialMargin = function() {
+    this.leveragedInitialMargin = this.initialMargin / this.leverage;
+};
+
+Calculate.prototype.setCloseMargin = function() {
+    this.closeMargin = this.close * this.quantity;
+};
+
+Calculate.prototype.setProfitAndLoss = function() {
+    this.profitAndLoss = this.initialMargin - this.closeMargin;
+};
+
+Calculate.prototype.setProfitAndLossPercentage = function() {
+    this.profitAndLossPercentage = (this.profitAndLoss / this.initialMargin) * 100;
+};
+
+Calculate.prototype.setRoi = function() {
+    this.roi = (this.profitAndLoss / this.leveragedInitialMargin) * 100;
+};
