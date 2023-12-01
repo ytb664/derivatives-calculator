@@ -201,3 +201,14 @@ Calculate.prototype.setProfitAndLossPercentage = function() {
 Calculate.prototype.setRoi = function() {
     this.roi = (this.profitAndLoss / this.leveragedInitialMargin) * 100;
 };
+
+function Input(leverage, quantity, entry, close, entryFee, closeFee) {
+    this.leverage = leverage;
+    this.quantity = quantity;
+    this.entry = entry;
+    this.close = close;
+    this.entryFee = entryFee;
+    this.closeFee = closeFee;
+}
+
+Object.setPrototypeOf(Input.prototype, Calculate.prototype);
